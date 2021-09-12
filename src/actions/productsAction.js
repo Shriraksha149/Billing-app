@@ -9,7 +9,6 @@ export const createProduct=(formData)=>{
         })
         .then((res)=>{
             const result=res.data
-            console.log('createCustomers',result)
             if(result.errors){
                 return alert(result.message)
             }
@@ -29,7 +28,7 @@ export const listsAllProducts=()=>{
         })
         .then((res)=>{
             const result=res.data 
-            console.log("from action",result)
+          
             if(result.errors){
                 alert(result.message)
             }
@@ -73,7 +72,6 @@ export const deleteProduct=(id)=>{
         })
         .then((res)=>{
             const result=res.data
-            console.log('delete res',result)
             if(result.errors){
                 return alert(result.message)
             }

@@ -38,8 +38,11 @@ const EditCustomer = ({_id :Eid,name:Ename,price:Eprice}) => {
 
 
     const deleteHandle=(Eid)=>{
-        
+        const sure = window.confirm('Are you sure')
+        if(sure){
             dispatch(deleteProduct(Eid))
+        }
+           
      }
     return (
         <>

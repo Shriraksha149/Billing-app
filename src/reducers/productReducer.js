@@ -3,7 +3,7 @@ const initialStateValue=[]
 const productsReducers = (state=initialStateValue,action) => {
     switch (action.type) {
         case 'ADD_PRODUCT':{
-            return [...state,action.payload]
+            return [action.payload,...state]
         }
         case 'LIST_ALL_PRODUCTS':{
             return action.payload

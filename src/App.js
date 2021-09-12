@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from "react"
+import React,{useState} from "react"
 import NavBar from "./components/NavBar"
 function App(props) {
   const [userLoggedIn,setUserLoggedIn]= useState(false)
@@ -7,11 +7,6 @@ function App(props) {
     setUserLoggedIn(!userLoggedIn)
   }
 
-  useEffect(()=>{
-    if(localStorage.getItem('token')){
-      handleAuth()
-    }
-  },[])
   return (
     <div>
         <NavBar userLoggedIn={userLoggedIn} handleAuth={handleAuth}/>

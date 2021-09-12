@@ -11,12 +11,12 @@ import Profile from './Profile/Profile'
 import Logout from './Logout/Logout'
 
 const NavBar = (props) => {
-    const {userLoggedIn,handleAuth}=props
-
+    const {handleAuth}=props
+     const localVar=localStorage.getItem('token')  || false
 
     return (
            <div>
-               {userLoggedIn ? (
+               {localVar ? (
                    <>
                       <Link to="dashboard">  Dashboard  </Link>
                       <Link to="customers">  Customers  </Link>

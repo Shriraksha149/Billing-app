@@ -7,9 +7,6 @@ import { userLoginAction} from '../../../actions/userAction'
 const Login = (props) => {
 
     const  {handleAuth} =props
-
-     console.log("from login c",props)
-
      const dispatch = useDispatch()
         const formSubmission=(formData)=>{
         

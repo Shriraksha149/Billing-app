@@ -1,8 +1,8 @@
-import React, { useState ,useEffect} from 'react'
+import React, { useState } from 'react'
 import { v4 as uuidv4} from 'uuid'
 import validator from 'validator'
 
-const CustomerForm = ({formSubmission,handleIsSaved,isSaved,handleToggle}) => {
+const CustomerForm = ({formSubmission,handleToggle}) => {
     const [id,setId]=useState( uuidv4())
     const [name,setName]=useState('')
     const [email,setEmail]=useState('')
@@ -10,18 +10,6 @@ const CustomerForm = ({formSubmission,handleIsSaved,isSaved,handleToggle}) => {
     const [errorObj,setErrorObj] = useState({})
     let errors = {}
     
-
-    useEffect(()=>{
-        if(isSaved){
-            setId(uuidv4())
-            setName('')
-            setEmail('')
-            setMobile('')
-            handleIsSaved()
-        }
-    },[isSaved,handleIsSaved])
-   
-
     const handleChange=(e)=>{
         const input=e.target.name
         if(input==="name"){
@@ -68,6 +56,10 @@ const CustomerForm = ({formSubmission,handleIsSaved,isSaved,handleToggle}) => {
             }
            
             formSubmission(formData)  
+            setId(uuidv4())
+            setName('')
+            setEmail('')
+            setMobile('')
 
            }else{
            setErrorObj(errors)
